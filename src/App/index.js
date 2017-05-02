@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Clock from './Clock';
-import ExerciseSidebar from './ExerciseSidebar';
+import ClockContainer from './ClockContainer';
+import Sidebar from './Sidebar';
 
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      exercises: [],
+      currentExercise: null,
+      totalTime: null,
+      currentExerciseTime: null
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Clock />
-        <ExerciseSidebar />
+        <ClockContainer />
+        <Sidebar />
       </div>
     );
   }
