@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import Clock from './Clock';
+import ExerciseSidebar from './ExerciseSidebar';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>RFR - Exercise Timer</h2>
-        </div>
-      
+        <Header />
+        <Clock />
+        <ExerciseSidebar />
       </div>
     );
   }
