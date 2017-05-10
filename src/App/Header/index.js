@@ -4,9 +4,9 @@ import './Header.css'
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
-          <h2>Top Beyotch</h2>
-
+      <div>
+          <h2>Awesome Header</h2>
+          <a href="#open-sidebar">Open Sidebar</a>
       </div>
     );
   }

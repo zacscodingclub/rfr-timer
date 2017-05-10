@@ -6,7 +6,6 @@ class ClockContainer extends Component {
     return (
       <div className="ClockContainer">
           <h2>Tick Tock</h2>
-
       </div>
     );
   }
