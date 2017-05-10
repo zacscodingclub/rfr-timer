@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-          <h2>Awesome Header</h2>
+          <h2>RFR.</h2>
           <a href="#open-sidebar">Open Sidebar</a>
       </div>
     );
