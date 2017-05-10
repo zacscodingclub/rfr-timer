@@ -19,7 +19,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="content">
+      <div className="content App">
         <Header />
         <ClockContainer />
         <Sidebar />
