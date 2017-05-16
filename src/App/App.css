@@ -62,14 +62,13 @@ label {
 	float: right;
   top: 0;
 	right: 0;
-  width: 0;
   height: 100vh;
   background: #3B3B3B;
   overflow-y: auto;
   transition: width 0.3s ease;
 }
 
-#open-sidebar:target {
+.open-sidebar {
 	width: 20%;
 }
 

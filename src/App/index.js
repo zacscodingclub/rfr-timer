@@ -10,19 +10,32 @@ class App extends Component {
     super(props);
 
     this.state = {
-      exercises: [],
-      currentExercise: null,
+      allExercises: [],
       totalTime: null,
-      currentExerciseTime: null
+      currentExercise: null,
+      currentExerciseTime: null,
+      sidebarOpen: false
     }
+
+    this.handleSidebar = this.handleSidebar.bind(this);
+  }
+
+  handleSidebar() {
+    this.setState(prevState => ({
+      sidebarOpen: !prevState.sidebarOpen
+    }));
   }
 
   render() {
     return (
       <div className="content">
-        <Header />
+        <Header
+          isOpen={this.state.sidebarOpen}
+          handleSidebar={this.handleSidebar}/>
         <ClockContainer />
-        <Sidebar />
+        <Sidebar
+          isOpen={this.state.sidebarOpen}
+          handleSidebar={this.handleSidebar}/>
       </div>
     );
   }

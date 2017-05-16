@@ -6,7 +6,9 @@ class Header extends Component {
     return (
       <div>
           <h2>Awesome Header</h2>
-          <a href="#open-sidebar">Open Sidebar</a>
+          <button onClick={this.props.handleSidebar}>
+            {this.props.isOpen ? "Close" : "Open"} Sidebar
+          </button>
       </div>
     );
   }
