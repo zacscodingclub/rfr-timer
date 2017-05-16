@@ -8,13 +8,14 @@ body {
 	color: #000;
 }
 
-a {
+button, input[type="submit"] {
 	background: grey;
 	padding: 8px;
 	color: white;
 	text-decoration: none;
 	border-radius: 5px;
 }
+
 .content:before {
 	content: "";
   position: fixed;
@@ -60,7 +61,7 @@ label {
 	-webkit-appearance: push-button;
   -moz-appearance: button;
   display: inline-block;
-  margin: 60px 0 10px 0;
+  margin: 15px;
 }
 
 .sidebar {
@@ -75,7 +76,7 @@ label {
 }
 
 .open-sidebar {
-	width: 20%;
+	width: 25%;
 }
 
 #open-sidebar:target + .page-wrap {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SidebarInput.css';
 
 class SidebarInput extends Component {
   constructor(props) {
@@ -12,16 +13,16 @@ class SidebarInput extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="input-div">
           <label htmlFor="exercise">Exercise: </label>
-          <input className="sidebar-input"
-                 type="text"
-                 placeholder="Which exercise?"
-                 id="exercise"
-          />
+            <input className="sidebar-input"
+                   type="text"
+                   placeholder="Which exercise?"
+                   id="exercise"
+            />
         </div>
-        <div>
-          <label htmlFor="exercise">Time: </label>
+        <div className="input-div">
+          <label htmlFor="time">Time:</label>
           <input className="sidebar-input"
                  type="text"
                  placeholder="How long?"

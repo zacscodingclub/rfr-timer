@@ -14,9 +14,8 @@ class Sidebar extends Component {
 
     return (
       <div className={componentClasses.join(' ')}>
-        <h2>It's a Sidebar</h2>
-        <p>Some Input stuff here.</p>
         <button onClick={this.props.handleSidebar}>Close X</button>
+        <SidebarForm />
       </div>
     );
   }
