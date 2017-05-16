@@ -5,10 +5,10 @@ class Header extends Component {
   render() {
     return (
       <div>
-          <h2>Awesome Header</h2>
-          <button onClick={this.props.handleSidebar}>
-            {this.props.isOpen ? "Close" : "Open"} Sidebar
-          </button>
+        <h2>RFR.</h2>
+        <button onClick={this.props.handleSidebar}>
+          {this.props.isOpen ? "Close" : "Open"} Sidebar
+        </button>
       </div>
     );
   }

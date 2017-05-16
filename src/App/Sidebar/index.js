@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SidebarForm from '../SidebarForm';
 import './Sidebar.css'
 
 class Sidebar extends Component {

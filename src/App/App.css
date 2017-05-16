@@ -8,6 +8,13 @@ body {
 	color: #000;
 }
 
+a {
+	background: grey;
+	padding: 8px;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+}
 .content:before {
 	content: "";
   position: fixed;
@@ -54,7 +61,6 @@ label {
   -moz-appearance: button;
   display: inline-block;
   margin: 60px 0 10px 0;
-  cursor: pointer;
 }
 
 .sidebar {
