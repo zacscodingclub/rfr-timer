@@ -8,17 +8,27 @@ class SidebarInput extends Component {
       exercise: '',
       time: ''
     }
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  handleOnChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   }
 
   render() {
     return (
       <div>
         <div className="input-div">
-          <label htmlFor="exercise">Exercise: </label>
+          <label htmlFor="exercise">Exercise #{this.props.inputId + 1}: </label>
             <input className="sidebar-input"
                    type="text"
                    placeholder="Which exercise?"
                    id="exercise"
+                   name="exercise"
+                   onChange={this.handleOnChange}
             />
         </div>
         <div className="input-div">
@@ -27,6 +37,8 @@ class SidebarInput extends Component {
                  type="text"
                  placeholder="How long?"
                  id="time"
+                 name="time"
+                 onChange={this.handleOnChange}
           />
         </div>
       </div>

@@ -6,20 +6,16 @@ class SidebarForm extends Component {
     super(props);
 
     this.state = {
-      inputs: [0],
-      nextInputId: 1
-    }
+      inputCount: 1
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddExercise = this.handleAddExercise.bind(this);
-    this.appendExercise = this.appendExercise.bind(this);
   }
 
   handleAddExercise(e) {
-    const inputId = this.state.nextInputId;
-    this.appendExercise(inputId);
     this.setState({
-      inputs: [...this.state.inputs, inputId],
-      nextInputId: this.state.nextInputId++
+      inputCount: this.state.inputCount + 1
     });
   }
 
@@ -29,10 +25,6 @@ class SidebarForm extends Component {
     console.log('SUBMITTING WORKOUT')
   }
 
-  appendExercise(id) {
-    return <SidebarInput inputId={id} />
-  }
-
   validateForm() {
     // get all inputs: e.target.querySelectorAll('.input-div')
     // get id from that input: input.lastChild.id
@@ -40,16 +32,22 @@ class SidebarForm extends Component {
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Build Your Workout</h3>
-        <SidebarInput inputId="0" />
-        <div>
-          <button onClick={this.handleAddExercise}>+ Add Exercise</button>
-          <input type="submit" />
-        </div>
+    const children = [];
+    for (let i = 0; i < this.state.inputCount; i++) {
+      children.push(<SidebarInput inputId={i} key={i} />);
+    };
 
-      </form>
+    return (
+      <div>
+        <button onClick={this.handleAddExercise}>+ Add Exercise</button>
+        <form onSubmit={this.handleSubmit}>
+          <h3>Build Your Workout</h3>
+          {children}
+          <input type="submit" />
+        </form>
+      </div>
+
+
     );
   }
 }
