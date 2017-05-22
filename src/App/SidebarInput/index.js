@@ -20,7 +20,7 @@ class SidebarInput extends Component {
 
   render() {
     return (
-      <div>
+      <div className="exercise-div">
         <div className="input-div">
           <label htmlFor="exercise">Exercise #{this.props.inputId + 1}: </label>
             <input className="sidebar-input"
@@ -35,7 +35,7 @@ class SidebarInput extends Component {
           <label htmlFor="time">Time:</label>
           <input className="sidebar-input"
                  type="text"
-                 placeholder="How long?"
+                 placeholder="How long in seconds?"
                  id="time"
                  name="time"
                  onChange={this.handleOnChange}

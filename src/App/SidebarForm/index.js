@@ -11,6 +11,7 @@ class SidebarForm extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddExercise = this.handleAddExercise.bind(this);
+    this.validateForm = this.validateForm.bind(this);
   }
 
   handleAddExercise(e) {
@@ -21,14 +22,37 @@ class SidebarForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
-    console.log('SUBMITTING WORKOUT')
+    let exercises = [...e.target.querySelectorAll('.exercise-div')];
+
+    this.parseForm(exercises);
   }
 
-  validateForm() {
-    // get all inputs: e.target.querySelectorAll('.input-div')
-    // get id from that input: input.lastChild.id
-    // get value from that input: input.lastChild.value
+  validateForm(values) {
+    let isValid = true
+
+    values.forEach(value => {
+      const invalidInput = (value.name === "" || value.time === "");
+      if(invalidInput) {
+        isValid = false;
+      };
+    });
+
+    return isValid;
+  }
+
+  parseForm(elements) {
+    const values = elements.map((el) => {
+      return {
+        name: el.querySelector('#exercise').value,
+        time: el.querySelector('#time').value
+      }
+    });
+
+    if(this.validateForm(values)) {
+      console.log("send values up");
+    } else {
+      console.log("there were some errors");
+    }
   }
 
   render() {
@@ -46,8 +70,6 @@ class SidebarForm extends Component {
           <input type="submit" />
         </form>
       </div>
-
-
     );
   }
 }
